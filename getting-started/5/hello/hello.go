@@ -1,9 +1,9 @@
 package main
 
 import (
-  "log"
-  "strconv"
-  "example.com/greetings"
+	"example.com/greetings"
+	"log"
+	"strconv"
 )
 
 // init function runs on initialisation
@@ -13,21 +13,21 @@ import (
 
 // main function runs when it is a main package
 func main() {
-  log.SetPrefix("greetings: ")
-  // log.SetFlags(0)
+	log.SetPrefix("greetings: ")
+	// log.SetFlags(0)
 
-  // messages, err := greetings.Hellos([]string{}) // to see error
+	// messages, err := greetings.Hellos([]string{}) // to see error
 
-  names := []string { "Tasos", "Stefania", "" }
-  messages, err := greetings.Hellos(names)
+	names := []string{"Tasos", "Stefania", ""}
+	messages, err := greetings.Hellos(names)
 
-  if err != nil {
-    log.Fatal(err)
-  }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-  log.Println("messages:", messages)
+	log.Println("messages:", messages)
 
-  for name, greeting := range messages {
-    log.Println("Greeting for", strconv.Quote(name), "is", strconv.Quote(greeting))
-  }
+	for name, greeting := range messages {
+		log.Println("Greeting for", strconv.Quote(name), "is", strconv.Quote(greeting))
+	}
 }
